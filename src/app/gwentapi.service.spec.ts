@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { GwentapiService } from './gwentapi.service';
+import GwentAPI from 'gwent-api-client';
 
 describe('GwentapiService', () => {
   beforeEach(() => {

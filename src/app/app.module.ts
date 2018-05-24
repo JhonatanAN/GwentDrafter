@@ -6,8 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SelectComponent } from './select/select.component';
 import { DeckComponent } from './deck/deck.component';
-//import { GwentAPI } from 'gwent-api-client'; importar o servico ñ api, api vai para o 
-//component de service
+import { GwentapiService } from './gwentapi.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ import { DeckComponent } from './deck/deck.component';
   FormsModule,
   HttpClientInMemoryWebApiModule
   ],
-  providers: [],
+  providers: [GwentapiService],
   bootstrap: [
   AppComponent,
   SelectComponent,

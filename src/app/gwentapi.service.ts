@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { GwentAPI } from 'gwent-api-client';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -9,5 +9,13 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class GwentapiService {
 
-  constructor() { }
+  constructor() {}
+  
+  getCards(){
+    GwentAPI
+    // fetch the first 20 cards
+    .cards({offset: 0, limit: 20})
+    // fetch each cards in the list
+    .then(res => Promise.all(res.results.map(GwentAPI.one)));
+  }
 }

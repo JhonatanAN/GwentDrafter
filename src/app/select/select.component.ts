@@ -20,6 +20,7 @@ export class SelectComponent implements OnInit {
         console.log(cards);
         this.cards = cards;
     });
+
   }
  
 }

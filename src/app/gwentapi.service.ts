@@ -10,12 +10,13 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class GwentapiService {
 
   constructor() {}
-  
+
   getCards(){
      return GwentAPI
     // fetch the first 20 cards
     .cards({offset: 0, limit: 20})
     // fetch each cards in the list
-    .then(res => Promise.all(res.results.map(GwentAPI.one)));
+    .then(res => Promise.all(res.results.map(GwentAPI.one/*(card, { fields: ['variations'] })*/)));
   }
+
 }

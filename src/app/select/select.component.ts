@@ -15,10 +15,7 @@ export class SelectComponent implements OnInit {
   constructor(private gwentApi:GwentapiService) {}
 
   ngOnInit() {
-   this.gwentApi.getCards().subscribe(cards => {
-    this.cards = cards;
-    console.log(cards); 
-   });
+   this.gwentApi.getCards()
 
   }
  

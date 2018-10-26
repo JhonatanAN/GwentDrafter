@@ -1,12 +1,13 @@
 <div class="container">
 	
-		<div class="col-sm">
-			<div class="jumbotron">
-				{{v}}
-			</div>			
-			<form>
-				<input type="text" class="txt" name="card" placeholder="Card 1" autocomplete="off">
-				<button type="button" class="btn btn-primary">Select</button>
+		<div class="col-sm" *ngIf="cards">
+			<div class="jumbotron" >
+			</div>
+
+			<input *ngFor="let card of cards" type="text" class="txt"  autocomplete="off"placeholder="Card 1"/>
+
+			<form>			
+        <button type="button" class="btn btn-primary">Select</button>
 			</form>
 		</div>
 

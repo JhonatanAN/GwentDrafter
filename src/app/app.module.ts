@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SelectComponent } from './select/select.component';
 import { DeckComponent } from './deck/deck.component';
 import { GwentapiService } from './gwentapi.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,14 @@ import { GwentapiService } from './gwentapi.service';
   imports: [
   BrowserModule,
   AppRoutingModule,
+<<<<<<< HEAD
   FormsModule
+=======
+  FormsModule,
+  HttpClientModule
+>>>>>>> origin/master
   ],
-  providers: [GwentapiService],
+  providers: [],
   bootstrap: [
   AppComponent,
   SelectComponent,

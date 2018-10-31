@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GwentapiService } from './gwent-api-client';
+import { GwentapiService } from '../gwentapi.service';
+
 
 @Component({
   selector: 'app-select',
@@ -9,14 +10,16 @@ import { GwentapiService } from './gwent-api-client';
 
 export class SelectComponent implements OnInit {
 	
-	v = "place holder";
+  v = "Select a Card";
+  cards;
 
-	
-
-  constructor() {private GwentAPI:GwentAPI}
+  constructor(private gwentApi:GwentapiService) {}
 
   ngOnInit() {
-    this.getCards();
+    
+   this.gwentApi.getCards().subscribe(
+    cards => this.cards = cards
+    );
+    //console.log(cards);
   }
-
-}
+ }

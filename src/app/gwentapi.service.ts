@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GwentAPI } from 'gwent-api-client';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators'; 
+import { CARDS } from './cards-mock';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,22 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class GwentapiService {
 
   constructor() {}
-  
+
   getCards(){
-    GwentAPI
-    // fetch the first 20 cards
-    .cards({offset: 0, limit: 20})
-    // fetch each cards in the list
-    .then(res => Promise.all(res.results.map(GwentAPI.one)));
+    let cardsArray= [];
+    for (let cardId in CARDS) {
+	    let card = CARDS[cardId];
+  	  let name = card.name["en-US"];
+  	  let url;
+      for (let artId in card.variations) {
+      	url = card.variations[artId].art.high;
+      }
+      cardsArray.push({"id": cardId, "name": name, "high": url});
+    }
+    return of(Object.keys(cardsArray));
   }
-}
+
+  getOneCard(cardId){
+    return of (CARDS[cardId]);
+  }
+  }

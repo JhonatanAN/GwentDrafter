@@ -17,15 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
   BrowserModule,
   AppRoutingModule,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  FormsModule
-=======
-  FormsModule,
-  HttpClientModule
->>>>>>> origin/master
->>>>>>> 9f409833a5731e60e23b915e1c4f7a5e184e3178
   ],
   providers: [],
   bootstrap: [

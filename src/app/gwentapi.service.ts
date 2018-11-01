@@ -18,11 +18,11 @@ export class GwentapiService {
   	  let name = card.name["en-US"];
   	  let url;
       for (let artId in card.variations) {
-      	url = card.variations[artId].art.high;
+      	url = card.variations[artId].art.thumbnail;
       }
-      cardsArray.push({"id": cardId, "name": name, "high": url});
+      cardsArray.push({"id": cardId, "name": name, "thumbnail": url});
     }
-    return of(Object.keys(cardsArray));
+    return of(Object.values(cardsArray));
   }
 
   getOneCard(cardId){

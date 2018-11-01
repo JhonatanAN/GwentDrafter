@@ -1,10 +1,11 @@
 <div class="container">
 	
-		<div class="col-sm" *ngIf="cards">
+		<div class="col-sm">
 			<div class="jumbotron" >
 			</div>
-
-			<input *ngFor="let card of cards" type="text" class="txt"  autocomplete="off"placeholder="Card 1"/>
+			<div *ngFor="let card of cards">{{card.name}}
+			</div>
+			<input type="text" class="txt"  autocomplete="off"placeholder="Card 1"/>
 
 			<form>			
         <button type="button" class="btn btn-primary">Select</button>

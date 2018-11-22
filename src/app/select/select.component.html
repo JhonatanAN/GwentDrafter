@@ -5,7 +5,7 @@
 				<div class="jumbotron">
 				</div>
 				<div>
-				<input type="text"  autocomplete="off"placeholder="Card 1"/>				
+				<input #searchBox id="search-box" (input)="search(searchBox.value)" />			
 				<select>
 				<option *ngFor="let card of cards">{{card.name}}</option>
 				</select>

@@ -22,4 +22,10 @@ export class SelectComponent implements OnInit {
     );
     //console.log(cards);
   }
+
+	search(q: string) {
+		this.cards = this.gwentApi.getCardsName(q);
+	}
+
+
  }

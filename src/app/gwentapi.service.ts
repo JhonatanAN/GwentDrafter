@@ -8,11 +8,13 @@ import { CARDS } from './cards-mock';
   providedIn: 'root'
 })
 export class GwentapiService {
+	cardsArray = [];
 
   constructor() {}
 
   getCards(){
-    let cardsArray= [];
+  	this.cardsArray = [];
+    
     for (let cardId in CARDS) {
 	    let card = CARDS[cardId];
   	  let name = card.name["en-US"];
@@ -20,12 +22,18 @@ export class GwentapiService {
       for (let artId in card.variations) {
       	url = card.variations[artId].art.thumbnail;
       }
-      cardsArray.push({"id": cardId, "name": name, "thumbnail": url});
+      this.cardsArray.push({"id": cardId, "name": name, "thumbnail": url});
     }
-    return of(Object.values(cardsArray));
+    return of(Object.values(this.cardsArray));
   }
 
   getOneCard(cardId){
     return of (CARDS[cardId]);
   }
-  }
+
+	getCardsName(q: string){
+		return this.cardsArray.filter(o =>
+        Object.keys(o).some(k => o[k].toLowerCase().includes(q.toLowerCase())));
+	}
+
+}

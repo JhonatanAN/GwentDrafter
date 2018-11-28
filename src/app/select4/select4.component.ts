@@ -1,14 +1,14 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GwentapiService } from '../gwentapi.service';
 
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.css']
+  selector: 'app-select4',
+  templateUrl: './select4.component.html',
+  styleUrls: ['./select4.component.css']
 })
 
-export class SelectComponent implements OnInit {
+export class Select4Component implements OnInit {
 	
   v = "Select a Card";
   cards;
@@ -19,14 +19,15 @@ export class SelectComponent implements OnInit {
   ngOnInit() {
     
    this.gwentApi.getCards().subscribe(
-    cards => this.cards = cards);
-
+    cards => this.cards = cards
+    );
+    //console.log(this.cards);
   }
 
 
   onSelect(name: string){
     this.teste = this.gwentApi.getLink(name);
-
+    //console.log(this.teste);
     }
 
  }

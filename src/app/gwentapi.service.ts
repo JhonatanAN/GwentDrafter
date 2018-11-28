@@ -9,20 +9,20 @@ import { CARDS } from './cards-mock';
 })
 export class GwentapiService {
 	cardsArray = [];
-
+  link = "";
   constructor() {}
 
   getCards(){
   	this.cardsArray = [];
-    
+
     for (let cardId in CARDS) {
-	    let card = CARDS[cardId];
-  	  let name = card.name["en-US"];
-  	  let url;
+      let card = CARDS[cardId];
+      let name = card.name["en-US"];
+      let url;
       for (let artId in card.variations) {
-      	url = card.variations[artId].art.thumbnail;
+      	url = card.variations[artId].art.low;
       }
-      this.cardsArray.push({"id": cardId, "name": name, "thumbnail": url});
+      this.cardsArray.push({"id": cardId, "name": name, "low": url});
     }
     return of(Object.values(this.cardsArray));
   }
@@ -30,10 +30,8 @@ export class GwentapiService {
   getOneCard(cardId){
     return of (CARDS[cardId]);
   }
-
-	getCardsName(q: string){
-		return this.cardsArray.filter(o =>
-        Object.keys(o).some(k => o[k].toLowerCase().includes(q.toLowerCase())));
-	}
-
+  getLink(par: string){
+    let temp = this.cardsArray.find(x=>x.name == par).low;
+    return temp;
+  }
 }

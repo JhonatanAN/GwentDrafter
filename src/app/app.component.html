@@ -1,17 +1,36 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img alt="" src="assets/Gwent_logo.png">
+	<h1>
+		Welcome to {{ title }}!
+	</h1>
+	<img alt="" src="assets/Gwent_logo.png">
 </div>
 <ul>
+	
+	<div class="d-flex justify-content-around">
+		<div class="row">
+			
+			<div class="col-xs-2">
+				<app-select></app-select>
+			</div>
+			
+			<div class="col-xs-2">
+				<app-select2></app-select2>
+			</div >
+			
+			<div class="col-xs-2">
+				<app-select3></app-select3>
+			</div>
 
-<app-select></app-select>
-<br/>
-<app-deck></app-deck>
+			<div class="col-xs-2">
+				<app-select4></app-select4>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<app-deck></app-deck>
 
 </ul>
 
-  
+
 <router-outlet></router-outlet>

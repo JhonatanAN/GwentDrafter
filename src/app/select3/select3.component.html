@@ -6,7 +6,6 @@
 		<select [(ngModel)]="selectedCard" (change)="onSelect(selectedCard)">
 			<option *ngFor="let card of cards" >{{card.name}}</option>
 		</select>
-		<button  class="btn btn-primary">Select</button>
-
+		<button  type="button" class="btn btn-primary">Select</button>		
 	</div>
 </div>

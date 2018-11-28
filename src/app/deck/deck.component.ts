@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-deck',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./deck.component.css']
 })
 export class DeckComponent implements OnInit {
-
+	
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

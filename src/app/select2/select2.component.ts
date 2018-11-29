@@ -13,6 +13,7 @@ export class Select2Component implements OnInit {
   v = "Select a Card";
   cards;
   teste = "";
+selectedCard: any;
 
   constructor(private gwentApi:GwentapiService) {}
 

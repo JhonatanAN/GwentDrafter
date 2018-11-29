@@ -1,9 +1,9 @@
 <div class="container">	
-	<div class="col-sm" >
+	<div *ngIf="selectedCard" class="col-sm" >
 		<div>
 			<img [src]="teste">
-		</div>	
-		<select [(ngModel)]="selectedCard" (change)="onSelect(selectedCard)">
+		</div >	
+		<select [(ngModel)]="selectedCard" name="selectedCard" (change)="onSelect(selectedCard)">
 			<option *ngFor="let card of cards" >{{card.name}}</option>
 		</select>
 		<button  class="btn btn-primary">Select</button>

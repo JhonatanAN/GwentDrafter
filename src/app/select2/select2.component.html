@@ -3,7 +3,7 @@
 		<div>
 			<img [src]="teste">
 		</div>	
-		<select [(ngModel)]="selectedCard" (change)="onSelect(selectedCard)">
+		<select [(ngModel)]="selectedCard" name="selectedCard" (change)="onSelect(selectedCard)">
 			<option *ngFor="let card of cards" >{{card.name}}</option>
 		</select>
 		<button  type="button" class="btn btn-primary">Select</button>		
